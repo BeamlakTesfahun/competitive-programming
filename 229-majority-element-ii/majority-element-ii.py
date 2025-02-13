@@ -1,17 +1,14 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
-        times = int(len(nums)/3)
+        target = int(len(nums)/3)
+        res = []
 
-        dic = {}
-        result = []
+        n = Counter(nums)
 
-        for i in range(len(nums)):
-            dic[nums[i]] = dic.get(nums[i], 0) + 1
+        for key,val in n.items():
+            if val > target:
+                res.append(key)
+        return res
+
         
-        for key,value in dic.items():
-            if value > times:
-                result.append(key)
-        return result
-
-
         
