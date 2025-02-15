@@ -1,16 +1,18 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        sorted_num = sorted(nums)
+        # 1 2 2 3 8
+
+        sorted_nums = sorted(nums)
         dic = {}
-        result = []
+        res = []
 
         for i in range(len(nums)):
-            if sorted_num[i] in dic:
+            if sorted_nums[i] in dic:
                 continue
+            dic[sorted_nums[i]] = i
+        print(dic)
 
-            dic[sorted_num[i]] = i
-        for i in nums:
-            result.append(dic[i])
-        return result
-
+        for j in nums:
+            res.append(dic[j])
+        return res
         
