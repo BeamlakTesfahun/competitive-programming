@@ -1,14 +1,14 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
-        target = int(len(nums)/3)
+
+        counts = Counter(nums)
         res = []
 
-        n = Counter(nums)
+        t = len(nums) // 3
 
-        for key,val in n.items():
-            if val > target:
+        for key, val in counts.items():
+            if val > t:
                 res.append(key)
         return res
 
-        
-        
+
