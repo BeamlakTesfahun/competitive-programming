@@ -1,8 +1,9 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        c = collections.Counter(s)
-        c2 = collections.Counter(t)
+        dic_s = Counter(s)
+        dic_t = Counter(t)
 
-        if c == c2:
+        if dic_s == dic_t:
             return True
-        return False
+
+        return False        
